@@ -1,36 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graziele Cristine - Psicóloga</title>
-    <link rel="stylesheet" href="estilo.css">
+    <title>Terapia Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <h1>Graziele Cristine</h1>
-    <p>Psicóloga - CRP 08/44127</p>
-</header>
-<nav>
-    <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre Mim</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="artigos.html">Portfólio</a></li>
-        <li><a href="contato.html">Contato</a></li>
-    </ul>
-</nav>
-<main>
-    <section class="apresentacao">
-        <img src="psicologa.jpg" alt="Foto da Psicóloga">
-        <div>
-            <h2>Bem-vindo(a)!</h2>
-            <p>Estou aqui para te ajudar a cuidar da sua saúde mental, emocional e do seu bem-estar.</p>
+
+    <main id="app-wrapper">
+        <div id="login-container" class="container">
+            <div class="card">
+                <h1>Terapia Games</h1>
+                <p>Acesse sua conta para começar</p>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" name="password" placeholder="Sua senha" required>
+                    </div>
+                    <button type="submit">Entrar</button>
+                </form>
+                <div class="footer-links">
+                    <a href="#">Não tem uma conta? Cadastre-se</a>
+                    <a href="#">Esqueceu sua senha?</a>
+                </div>
+            </div>
         </div>
-    </section>
-</main>
-<footer>
-    <p>&copy; 2025 Graziele Cristine | Todos os direitos reservados</p>
-</footer>
+
+        <div id="game-dashboard" class="container hidden">
+             <div class="card">
+                <h2>Roleta das Emoções</h2>
+                <p>Gire a roleta e converse sobre a emoção que sair!</p>
+
+                <div id="wheel-container">
+                    <div class="wheel-pointer"></div>
+                    <canvas id="emotion-wheel" width="300" height="300"></canvas>
+                </div>
+                
+                <button id="spin-button">Girar!</button>
+                <div id="result-display"></div>
+
+                <button id="logoutButton">Sair</button>
+            </div>
+        </div>
+    </main>
+
+    <audio id="spinning-audio" src="spinning-sound.mp3"></audio>
+    <audio id="tada-audio" src="tada-sound.mp3"></audio>
+
+    <script src="script.js"></script>
 </body>
 </html>

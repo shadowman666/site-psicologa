@@ -1,0 +1,185 @@
+/* === ESTILO MODERNO COM CSS3 === */
+
+:root {
+    --primary-color: #833ab4; /* Roxo Instagram */
+    --secondary-color: #fd1d1d; /* Vermelho Instagram */
+    --accent-color: #fcb045; /* Amarelo Instagram */
+    --card-background: rgba(255, 255, 255, 0.25); /* Branco semi-transparente para o efeito vidro */
+    --text-color: #222;
+    --light-gray: #ddd;
+    --border-color: rgba(255, 255, 255, 0.4);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Gradiente mais vibrante, inspirado no Instagram */
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    background-size: 400% 400%; /* Para a animação do gradiente */
+    animation: gradientAnimation 15s ease infinite; /* Animação sutil no fundo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: var(--text-color);
+}
+
+/* Animação para o gradiente do fundo */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* O "Cartão" com efeito Vidro Fosco */
+.card {
+    background: var(--card-background);
+    padding: 40px;
+    border-radius: 20px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px); /* A MÁGICA DO VIDRO FOSCO! */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border: 1px solid var(--border-color);
+    text-align: center;
+    animation: fadeInUp 0.5s ease-out forwards; /* Animação de entrada */
+}
+
+/* Animação de entrada para o card */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+h1, h2 {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--light-gray);
+    background: rgba(255, 255, 255, 0.5); /* Fundo levemente transparente */
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.3s ease; /* Transição para o foco */
+}
+
+/* Efeito de "glow" quando o campo é selecionado */
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(131, 58, 180, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); /* Gradiente no botão */
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Micro-interação no botão */
+button:hover {
+    transform: translateY(-3px); /* Levanta o botão */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+button:active {
+    transform: translateY(0px) scale(0.98); /* Efeito de pressionar */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.footer-links {
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+.footer-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.hidden { display: none; }
+
+/* === ESTILOS DO JOGO DA ROLETA === */
+#wheel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.wheel-pointer {
+    width: 0; height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 30px solid #333;
+    position: absolute;
+    top: -15px;
+    z-index: 10;
+    filter: drop-shadow(0px 2px 2px rgba(0,0,0,0.3)); /* Sombra na seta */
+}
+
+#emotion-wheel {
+    transition: transform 5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.25)); /* Sombra suave na roleta */
+}
+
+#result-display {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: var(--text-color);
+    min-height: 30px;
+}
+
+#logoutButton {
+    margin-top: 20px;
+    background: #555; /* Cor mais sóbria para o botão de sair */
+}
+
+#logoutButton:hover {
+    background: #333;
+}
